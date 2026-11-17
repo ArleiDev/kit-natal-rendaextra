@@ -208,6 +208,12 @@ h1 em{display:block;font-family:GreatVibes,cursive;font-style:normal;font-weight
   }
   s.innerHTML=h;
 })();
+// Pixel: conta quem foi para o checkout
+document.querySelectorAll('a[href*="pay.cakto.com.br"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    if(window.fbq)fbq('track','InitiateCheckout',{value:19.90,currency:'BRL',content_name:'Kit Renda Extra de Natal'});
+  });
+});
 </script>
 </body>
 </html>
